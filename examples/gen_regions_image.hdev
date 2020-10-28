@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.2" halcon_version="19.11.0.0">
+<procedure name="main">
+<interface/>
+<body>
+<l>Convert := 0</l>
+<c></c>
+<l>s := 3$'d'</l>
+<l>gen_image_const (Image, 'byte', 2000, 2000)</l>
+<c></c>
+<l>gen_rectangle2 (Rectangle, 1000, 1000, 0, 500, 50)</l>
+<l>gen_circle (Circle, 400, 400, 100.5)</l>
+<l>gen_circle_sector (CircleSector, 1500, 1500, 200, rad(135), rad(270))</l>
+<c></c>
+<l>gen_empty_obj (Regions)</l>
+<l>concat_obj (Regions, Rectangle,Regions)</l>
+<l>concat_obj (Regions, Circle,Regions)</l>
+<l>concat_obj (Regions, CircleSector,Regions)</l>
+<c></c>
+<l>union1 (Regions, RegionUnion)</l>
+<c></c>
+<l>region_to_bin (RegionUnion, BinImage, 40, 200, 2000, 2000)</l>
+<c></c>
+<l>if (Convert == 1)</l>
+<l>    convert_image_type (BinImage, ImageConverted, 'uint2')</l>
+<l>    scale_image (ImageConverted, BinImage, 32, 0)</l>
+<l>endif</l>
+<c></c>
+<l>write_image (BinImage, 'png', 0,'C:/Users/songyuncen/Desktop/im1.png')</l>
+<l>for i := 20 to 340 by 20</l>
+<l>    rotate_image (BinImage, ImageRotate, i, 'bicubic')</l>
+<l>    write_image (ImageRotate, 'png', 0,'C:/Users/songyuncen/Desktop/im' + i$'d' + '.png')</l>
+<l>endfor</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>
