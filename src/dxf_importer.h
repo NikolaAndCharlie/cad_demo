@@ -12,7 +12,7 @@ class Entity;
 class DxfImport : public DL_CreationAdapter
 {
 public:
-    DxfImport();
+    DxfImport(double scale, const QPointF& offset = QPointF(0, 0));
     ~DxfImport();
 
     bool Read(const QString& file_name);
