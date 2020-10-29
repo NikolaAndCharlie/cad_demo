@@ -10,6 +10,11 @@ EntityView::EntityView(QGraphicsScene* scene, QWidget* parent)
     setMouseTracking(true);
 }
 
+EntityView::~EntityView()
+{
+
+}
+
 void EntityView::wheelEvent(QWheelEvent* event)
 {
     int degrees = event->delta() / 8;

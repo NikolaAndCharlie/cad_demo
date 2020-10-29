@@ -31,7 +31,6 @@ private:
     QStringList m_layers;
     QList<std::shared_ptr<Entity>> m_items;
     double m_scale;
-    double m_offset;
     QPointF m_offset;
     bool m_in_model_space = true;
 };

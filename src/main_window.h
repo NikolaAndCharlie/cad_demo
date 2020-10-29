@@ -20,19 +20,15 @@ private slots:
 
 private:
     void CreateUi();
-    void SelectItem(int index);
-    void ToggleVisibility(int index);
-    void SetItemVisibility(int index, bool visibility);
-    void SetLayerVisibility(int index, bool visibility);
 
     void SetLayers(const QStringList& layers);
     void SetItems(const QList<std::shared_ptr<Entity>>& items);
 
-    QString dxf_file_name;
     std::shared_ptr<Entity> m_current_item;
     EntityView* m_view;
 
     QLineEdit* m_dxf_file_path_line_eidt;
+    QList<QGraphicsItem*> m_selected_items;
 };
 
 #endif // !MAINWIDGET_H_

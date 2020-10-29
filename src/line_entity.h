@@ -4,7 +4,7 @@
 #include "entity.h"
 
 class QGraphicsLineItem;
-class QGraphocsPolygonItem;
+class QGraphicsPolygonItem;
 
 class LineEntity : public Entity
 {
